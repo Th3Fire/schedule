@@ -24,8 +24,7 @@ require_once("connect.php");
 
 if(!isset($_SESSION['UserID']))
 {
-header ("Location: login.php");
-exit();
+
 }else
 {
 	header ("Location: index.php");
