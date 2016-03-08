@@ -2,7 +2,7 @@
 <html >
   <head>
     <meta charset="UTF-8">
-    <title>Material Login Form</title>
+    <title>ระบบจัดตารางเรียน เข้าสู่ระบบ</title>
     
     
     <link rel="stylesheet" href="css/reset.css">
@@ -18,6 +18,21 @@
   </head>
 
   <body>
+<?php
+  session_start();
+require_once("connect.php");
+
+if(!isset($_SESSION['UserID']))
+{
+header ("Location: login.php");
+exit();
+}else
+{
+	header ("Location: index.php");
+}
+
+
+?>
 
     
 <!-- Mixins-->

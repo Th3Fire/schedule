@@ -36,7 +36,7 @@ exit();
 		<?php include 'sideBar.php'; ?>
 	</div>
 	<div>
-		<?php include 'footer.html'; ?>
+		<?php include 'footer.php'; ?>
 	</div>
 	
 </div>

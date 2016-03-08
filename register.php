@@ -11,7 +11,7 @@
 	$sql = "INSERT INTO member (Username,Password,Name,LoginStatus,LastUpdate) VALUES('$username','$password','$name',0,'0000-00-00 00:00:00')";
 	
 if (mysqli_query($con, $sql)) {
-    echo "New record created successfully";
+    header("location:registerSuccess.php");
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }

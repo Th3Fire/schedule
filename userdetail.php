@@ -33,14 +33,12 @@ exit();
 
 ?>
 		
-		<td width="197"><?php echo $objResult["Username"];?>
-		<div>
-
-		<form action="logout.php" method="get">
 		
-		<button class="myButton" type="submit" value="Submit"/>ชื่อผู้ใช้งาน : <?php echo $objResult["Username"];?> [Logout]</button>
-		</form>
-		</div>
+
+	
+		
+		<button class="myButton" type="submit" value="Submit"/>ชื่อผู้ใช้งาน : <?php echo $objResult["Username"];?> </button>
+		
 
 
 </body>

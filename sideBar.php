@@ -44,10 +44,10 @@ exit();
                     
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
-                       <i class="fa fa-folder-open fa-2x"></i>
+                    <a href="manageCourse.php">
+                       <i class="fa fa-plus-square fa-2x"></i>
                         <span class="nav-text">
-                            Pages
+                            เพิ่ม/ลบ รายวิชา
                         </span>
                     </a>
                    
@@ -56,7 +56,7 @@ exit();
                     <a href="#">
                         <i class="fa fa-bar-chart-o fa-2x"></i>
                         <span class="nav-text">
-                            Graphs and Statistics
+                            comming soon
                         </span>
                     </a>
                 </li>
@@ -64,7 +64,7 @@ exit();
                     <a href="#">
                         <i class="fa fa-font fa-2x"></i>
                         <span class="nav-text">
-                            Typography and Icons
+                            comming soon
                         </span>
                     </a>
                 </li>
@@ -72,7 +72,7 @@ exit();
                    <a href="#">
                        <i class="fa fa-table fa-2x"></i>
                         <span class="nav-text">
-                            Tables
+                            comming soon
                         </span>
                     </a>
                 </li>
@@ -80,7 +80,7 @@ exit();
                    <a href="#">
                         <i class="fa fa-map-marker fa-2x"></i>
                         <span class="nav-text">
-                            Maps
+                            comming soon
                         </span>
                     </a>
                 </li>
@@ -88,7 +88,7 @@ exit();
                     <a href="#">
                        <i class="fa fa-info fa-2x"></i>
                         <span class="nav-text">
-                            Documentation
+                            comming soon
                         </span>
                     </a>
                 </li>
@@ -96,7 +96,7 @@ exit();
 
             <ul class="logout">
                 <li>
-                   <a href="#">
+                   <a href="logout.php">
                          <i class="fa fa-power-off fa-2x"></i>
                         <span class="nav-text">
                             Logout

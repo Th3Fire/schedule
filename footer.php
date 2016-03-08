@@ -47,18 +47,16 @@ exit();
 
 			<!--	<h3>Company<span>logo</span></h3> -->
 
-				<p class="footer-links">
-					
-				</p>
+				
 
 				
 			</div>
-
+			<center>
 			<div class="footer-center">
-
+				
 				<div>
-					<h1><span>    จัดทำโดย นายวุฒินันท์  ชาวยศ สาขาวิชาวิศวกรรมคอมพิวเตอร์</span></h1>
-
+					<h2><span>จัดทำโดย นายวุฒินันท์  ชาวยศ สาขาวิชาวิศวกรรมคอมพิวเตอร์</span></h2>
+					<h2><span>มหาวิทยาลัยเทคโนดลยีสุรนารี</span></h2>
 
 				</div>
 				
@@ -72,10 +70,11 @@ exit();
 				</div>
 
 			</div>
+			</center>
 
 			<div class="footer-right">
 
-				<p class="footer-company-about">
+				
 
 
 			</div>

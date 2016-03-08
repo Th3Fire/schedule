@@ -7,7 +7,7 @@
 <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 
         <link rel="stylesheet" href="css/style.css">
-	<title>Home</title>
+	<title>ระบบจัดตารางเรียน</title>
 </head>
 <body>
 <?php
@@ -21,14 +21,7 @@ header ("Location: login.php");
 exit();
 }
 
-//*** Update Last Stay in Login System
-	$sql = "UPDATE member SET LastUpdate = NOW() WHERE UserID = '".$_SESSION["UserID"]."' ";
-	$query = mysqli_query($con,$sql);
 
-	//*** Get User Login
-	$strSQL = "SELECT * FROM member WHERE UserID = '".$_SESSION['UserID']."' ";
-	$objQuery = mysqli_query($con,$strSQL);
-	$objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
 ?>
 
 
@@ -45,7 +38,7 @@ exit();
 		<?php include 'sideBar.php'; ?>
 	</div>
 	<div>
-		<?php include 'footer.html'; ?>
+		<?php include 'footer.php'; ?>
 	</div>
 	
 </div>
