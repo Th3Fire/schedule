@@ -34,7 +34,7 @@
 			echo "'".$_SESSION["UserID"]."'";
 
 			//*** Go to Main page
-			header("location: index.php");
+			header("location:index.php");
 		}
 			
 	}

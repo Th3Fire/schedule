@@ -53,19 +53,24 @@
     <h1 class="title">Register
       <div class="close"></div>
     </h1>
-    <form>
+    <form name="form2" method="post" action="register.php">
+       <div class="input-container">
+        <input name="txtName" type="text" id="txtName" required="required"/>
+        <label for="Username">Full name</label>
+        <div class="bar"></div>
+      </div>
       <div class="input-container">
-        <input type="text" id="Username" required="required"/>
+        <input name="txtUsername" type="text" id="txtUsername" required="required"/>
         <label for="Username">Username</label>
         <div class="bar"></div>
       </div>
       <div class="input-container">
-        <input type="password" id="Password" required="required"/>
+        <input name="txtPassword" type="password" id="txtPassword" required="required"/>
         <label for="Password">Password</label>
         <div class="bar"></div>
       </div>
       <div class="input-container">
-        <input type="password" id="Repeat Password" required="required"/>
+        <input name="txtConPassword" type="password" id="Repeat Password" required="required"/>
         <label for="Repeat Password">Repeat Password</label>
         <div class="bar"></div>
       </div>
