@@ -7,20 +7,19 @@
 <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 
         <link rel="stylesheet" href="css/style.css">
-	<title>Home</title>
+	<title></title>
 </head>
 <body>
 <?php
 
-session_start();
+
 require_once("connect.php");
 
 if(!isset($_SESSION['UserID']))
 {
-header ("Location: login.php");
+header("location:login.php");
 exit();
 }
-
 //*** Update Last Stay in Login System
 	$sql = "UPDATE member SET LastUpdate = NOW() WHERE UserID = '".$_SESSION["UserID"]."' ";
 	$query = mysqli_query($con,$sql);
@@ -29,26 +28,20 @@ exit();
 	$strSQL = "SELECT * FROM member WHERE UserID = '".$_SESSION['UserID']."' ";
 	$objQuery = mysqli_query($con,$strSQL);
 	$objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
+
+
+
 ?>
+		
+		<td width="197"><?php echo $objResult["Username"];?>
+		<div>
 
-
-<div>
-	<div>
-	 <?php include 'userdetail.php'; ?>
-	</div>
-	<div>
-		<div class="pen-title">
-  		<h1>Home</h1>
+		<form action="logout.php" method="get">
+		
+		<button class="myButton" type="submit" value="Submit"/>ชื่อผู้ใช้งาน : <?php echo $objResult["Username"];?> [Logout]</button>
+		</form>
 		</div>
-	</div>
-	<div>
-		<?php include 'sideBar.php'; ?>
-	</div>
-	<div>
-		<?php include 'footer.html'; ?>
-	</div>
-	
-</div>
+
 
 </body>
 </html>

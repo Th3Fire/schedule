@@ -10,11 +10,21 @@
 	<title>รายวิาชาเรียนของฉัน</title>
 </head>
 <body>
+<?php
 
+session_start();
+require_once("connect.php");
+
+if(!isset($_SESSION['UserID']))
+{
+header("location:login.php");
+exit();
+}
+
+?>
 <div>
 	<div>
-	 
-		<button class="myButton" type="submit" value="Submit"/>Logout</button>
+	 	<?php include 'userdetail.php'; ?>
 	</div>
 	<div>
 		<div class="pen-title">

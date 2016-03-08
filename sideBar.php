@@ -2,10 +2,22 @@
   <head>
  <link rel="stylesheet" href="css/style.css">
   </head>
-  <body><div class="area"></div><nav class="main-menu">
+  <body>
+<?php
+
+
+if(!isset($_SESSION['UserID']))
+{
+header("location:login.php");
+exit();
+}
+
+
+?>
+  <div class="area"></div><nav class="main-menu">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="index.php">
                         <i class="fa fa-home fa-2x"></i>
                         <span class="nav-text">
                             หน้าหลัก

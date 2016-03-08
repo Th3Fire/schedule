@@ -20,6 +20,18 @@
 </head>
 
 	<body>
+	<?php
+
+
+require_once("connect.php");
+
+if(!isset($_SESSION['UserID']))
+{
+echo "Please Login!";
+exit();
+}
+
+?>
 
 		<header>
 
@@ -46,7 +58,7 @@
 
 				<div>
 					<h1><span>    จัดทำโดย นายวุฒินันท์  ชาวยศ สาขาวิชาวิศวกรรมคอมพิวเตอร์</span></h1>
-					
+
 
 				</div>
 				
