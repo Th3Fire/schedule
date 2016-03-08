@@ -30,21 +30,22 @@
   <div class="card"></div>
   <div class="card">
     <h1 class="title">Login</h1>
-    <form>
+    <form name="form1" method="post" action="check_login.php">
       <div class="input-container">
-        <input type="text" id="Username" required="required"/>
-        <label for="Username">Username</label>
+        <input name="txtUsername" type="text" id="txtUsername" required="required"/>
+        <label for="txtUsername">Username</label>
         <div class="bar"></div>
       </div>
       <div class="input-container">
-        <input type="password" id="Password" required="required"/>
-        <label for="Password">Password</label>
+        <input name="txtPassword" type="password" id="txtPassword" required="required"/>
+        <label for="txtPassword">Password</label>
         <div class="bar"></div>
       </div>
       <div class="button-container">
         <button><span>Go</span></button>
+
       </div>
-      <div class="footer"><a href="#">Forgot your password?</a></div>
+     <!-- <div class="footer"><a href="#">Forgot your password?</a></div> -->
     </form>
   </div>
   <div class="card alt">
