@@ -31,8 +31,31 @@ exit();
   		<h1>รายวิชาทั้งหมด</h1>
 		</div>
 	</div>
+<!--  show data  -->
 	<div>
+<?php
+	$strUserId = $_SESSION['UserID'];
+	echo "            ".$strUserId;
+	$sql = "SELECT * FROM course WHERE UserID = '".$strUserId."' ";
+	$result = $con->query($sql);
+	
+	
+if ($result->num_rows > 0) {
+
+	while($row = $result->fetch_assoc()) {
+        echo "id: " . $row["CourseID"]. " Course Name: " . $row["CourseName"]." Time start: " . $row["Time_start"].  " Time end: " . $row["Time_end"]. " Credit: " . $row["Credit"]. " UserID: " . $row["UserID"]. " Day: " . $row["Day"]."<br>";
+    }
+}else
+{
+	echo " 0 results";
+}
+?>
+	</div>
+
+	<div>
+	
 		<?php include 'sideBar.php'; ?>
+	
 	</div>
 	<div>
 		<?php include 'footer.php'; ?>

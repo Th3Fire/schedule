@@ -37,7 +37,7 @@ exit();
 
 	
 		
-		<button class="myButton" type="submit" value="Submit"/>ชื่อผู้ใช้งาน : <?php echo $objResult["Username"];?> </button>
+		<button class="myButton" type="submit" value="Submit"/>ชื่อผู้ใช้งาน : <?php echo $objResult["Username"];?> [ <?php echo $objResult["Name"];?> ]</button>
 		
 
 
