@@ -62,11 +62,11 @@ exit();
 					
 						<font size="5">วิชา : </font> 
 						<span class='glyphicon glyphicon-floppy-saved'></span> 
-							<input class="enjoy-css"  /></div>
+							<input class="enjoy-css" name="course" id="course" /></div>
 						
 						<font size="5">หน่วยกิต : </font> 
 						<span class="css3-metro-dropdown css3-metro-dropdown-color-ff1d77">
-    <select name="dropdown-2">
+    <select name="credit" id="credit">
     	<option value="0"> </option>
         <option value="1">  1  </option>
         <option value="1">  2  </option>        
@@ -83,13 +83,13 @@ exit();
 					<textarea style="font-size: 14pt; color: #000; width: 85%; height: 150px;" class="dap_textarea" placeholder="Mo09:00-11:00 B4101" name="val" id="val"></textarea>
 					<br />
 					<br />
-					<button class="bt01" onclick="courseSave()">
+					<button class="bt01" onclick="courseSave()" >
 					<span>
 					<i class="material-icons" >save</i>Save
 					</span>
 					</button>
 
-					<button class="btCancel">
+					<button class="btCancel" > 
 					<span>
 					<i class="material-icons">delete</i>Cancel
 					</span>

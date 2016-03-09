@@ -12,39 +12,32 @@ function myFunction() {
     document.getElementById("demo").innerHTML = res;
 }
 
-$(document).ready(function () {
-    if ($.trim($("val").val()) != "") {
-        alert($("val").val());
-    }
-});
+
 
 function courseSave() {
-	var course = $('#course').val();
-	var credit = $('#credit').val();
-	var val = $('#val').val();
+		var e = document.getElementById("credit");
+		var fgt = e.options[e.selectedIndex].value;
+		var c = val.value;
+		var str = course.value;
+		
+		
+		if(str == "")
+		{
+			alert("โปรดระบุ ชื่อวิชา");
+		}
+		else if(fgt == 0)
+		{
+			alert("โปรดเลือก หน่วยกิต");
+		}
+		else if(c == "")
+		{
+			alert("โปรดระบุ วันเวลาเรียน");
+		}
+
+        
+    
+
 	
-	if(course == '') {
-		$.messager.alert('แจ้งเตือน', 'กรุณาใส่ชื่อหรือรหัสวิชา', 'warning');
-	} else if(credit == 0) {
-		$.messager.alert('แจ้งเตือน', 'กรุณาเลือก หน่วยกิต', 'warning');
-	} else if(val == ''){
-		$.messager.alert('แจ้งเตือน', 'กรุณาใส่ วัน - เวลาเรียน', 'warning');
-	} else {
-		$.ajax({
-			url : 'index.php?r=Course/SaveCourse',
-			data : {
-				val : val,
-				course : course,
-				credit : credit,
-			},
-			success : function(data) {
-				slide(data);
-				$('#course').val('');
-				$('#credit').val('');
-				$('#val').val('');
-			}
-		});
-	}
 }
 
 function getre(str, num) {

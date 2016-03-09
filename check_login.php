@@ -17,17 +17,13 @@
 	}
 	else
 	{
-		if($objResult["LoginStatus"] == "1")
-		{
-			echo "'".$strUsername."' Exists login!";
-			exit();
-		}
-		else
-		{
+		
+		/*
 			//*** Update Status Login
 			$sql = "UPDATE member SET LoginStatus = '1' , LastUpdate = NOW() WHERE UserID = '".$objResult["UserID"]."' ";
 			$query = mysqli_query($con,$sql);
 
+		*/
 			//*** Session
 			$_SESSION["UserID"] = $objResult["UserID"];
 			session_write_close();
@@ -35,7 +31,7 @@
 
 			//*** Go to Main page
 			header("location:index.php");
-		}
+		
 			
 	}
 	mysqli_close($con);
