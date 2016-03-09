@@ -21,45 +21,90 @@ header("location:login.php");
 exit();
 }
 
+
 ?>
+
+
 <div>
 	<div>
-	 	<?php include 'userdetail.php'; ?>
-	</div>
+	 <?php include 'userdetail.php'; ?>
 	<div>
 		<div class="pen-title">
   		<h1>รายวิชาทั้งหมด</h1>
 		</div>
 	</div>
-<!--  show data  -->
+<!-- content  -->
+<div data-options="region:'center'," style="padding: 10px;" align="center">
+				<!-- breadcrumbs -->
+				<div id="content">
 	<div>
-<?php
+	
+	<div align="center">
+		<table width="100%">
+		
+			<tr>
+			<td> </td>
+				<center>
+				<td valign="top" width="40%" height="100%">
+					
+						
+					<?php
 	$strUserId = $_SESSION['UserID'];
 	echo "            ".$strUserId;
-	$sql = "SELECT * FROM course WHERE UserID = '".$strUserId."' ";
+	$sql = "SELECT * FROM test WHERE UserID = '".$strUserId."' ";
 	$result = $con->query($sql);
 	
 	
 if ($result->num_rows > 0) {
 
 	while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["CourseID"]. " Course Name: " . $row["CourseName"]." Time start: " . $row["Time_start"].  " Time end: " . $row["Time_end"]. " Credit: " . $row["Credit"]. " UserID: " . $row["UserID"]. " Day: " . $row["Day"]."<br>";
+        echo "id: " . $row["id"]. " Course Name: " . $row["CourseName"]." Time: " . $row["Time"].   " Credit: " . $row["Credit"]. " UserID: " . $row["UserID"]. "<br>";
     }
 }else
 {
 	echo " 0 results";
 }
 ?>
-	</div>
+					
+
+					
+					
+					
+										
+					</td>
+					</center>
+				<td valign="top" height="454px">
+					
+				</td>
+			</tr>
+		</table>
+	
+</div>
+</div>
+</div>
+</div>
+
 
 	<div>
-	
 		<?php include 'sideBar.php'; ?>
-	
 	</div>
 	<div>
 		<?php include 'footer.php'; ?>
 	</div>
+
+
+	
+</div>
+
+
+
+
+
+
+
+
+
+
 	
 </div>
 
