@@ -2,22 +2,32 @@
 <html>
 <head>
 <link rel="stylesheet" href="css/reset.css">
-
 <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
-
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/animate.css">
 <link href="metro-icons.css" rel="stylesheet">
-
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-
 <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.12.1.js"></script>
+<script type="text/javascript" src="js/bootstrap-notify.js"></script>
+<script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
 <style type="text/css">
 	table td, table td * {
     vertical-align: top;
 }
+[data-notify="progressbar"] {
+	margin-bottom: 0px;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 5px;
+}
 </style>
-
 	<title>เพิ่ม รายวิชา</title>
 </head>
 <body>
@@ -31,9 +41,6 @@ header("location:login.php");
 exit();
 }
 ?>
-
-
-
 <div>
 	<div>
 	 <?php include 'userdetail.php'; ?>
@@ -61,7 +68,7 @@ exit();
 				<td valign="top" width="40%">
 					
 						<font size="5">วิชา : </font> 
-						<span class='glyphicon glyphicon-floppy-saved'></span> 
+						<span></span> 
 							<input class="enjoy-css" name="course" id="course" /></div>
 						
 						<font size="5">หน่วยกิต : </font> 
@@ -79,7 +86,7 @@ exit();
 					<br />	
 					<br />
 					<form name="form2" method="post">
-					<textarea style="font-size: 14pt; color: #000; width: 85%; height: 150px;" class="dap_textarea" placeholder="Mo09:00-11:00 B4101" name="val" id="val"></textarea>
+					<textarea style="font-size: 14pt; color: #000; width: 100%; height: 150px;" class="dap_textarea" placeholder="Mo09:00-11:00 B4101" name="val" id="val"></textarea>
 					</form>
 					<br />
 					<br />
@@ -88,15 +95,11 @@ exit();
 					<i class="material-icons" >save</i>Save
 					</span>
 					</button>
-
 					<button class="btCancel" > 
 					<span>
 					<i class="material-icons">delete</i>Cancel
 					</span>
-					</button>
-					
-					
-										
+					</button>					
 					</td>
 					</center>
 				<td valign="top">
@@ -109,8 +112,6 @@ exit();
 </div>
 </div>
 </div>
-
-
 	<div>
 		<?php include 'sideBar.php'; ?>
 	</div>
@@ -118,43 +119,8 @@ exit();
 		<?php include 'footer.php'; ?>
 	</div>
 
-
-	
 </div>
-
 <script>
-function courseSave() {
-		
-		var inTxt = document.getElementById('val').value.replace(/\n/g, "*");
-		var e = document.getElementById("credit");
-		var fgt = e.options[e.selectedIndex].value;
-		var c = val.value;
-		var str = course.value;
-
-		var my_array = new Array(str,fgt,inTxt);
-		
-		if(str == "")
-		{
-			alert("โปรดระบุ ชื่อวิชา");
-		}
-		else if(fgt == 0)
-		{
-			alert("โปรดเลือก หน่วยกิต");
-		}
-		else if(c == "")
-		{
-			alert("โปรดระบุ วันเวลาเรียน");
-		}
-
-		else
-		{
-			alert("OK");
-			 window.location.href = "checkTime.php?name=" + my_array;
-		}
-
-        
- 	
-}
 </script>
 </body>
 </html>

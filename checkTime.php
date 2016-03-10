@@ -14,18 +14,20 @@
 	require_once("connect.php");
 
 
-$courseName = $_GET['name'];
+$courseName = $_GET['course'];
+$credit = $_GET['credit'];
+$val = $_GET['val'];
 
-$str = $_GET['name'];
-$val = explode(",",$str);
+
 $UserID = $_SESSION['UserID'];
 
 
 
 
-	$sql = "INSERT INTO test (CourseName,Time,Credit,UserID) VALUES('$val[0]','$val[2]','$val[1]','$UserID')";
+	$sql = "INSERT INTO test (CourseName,Time,Credit,UserID) VALUES('$courseName','$val','$credit','$UserID')";
 	
 if (mysqli_query($con, $sql)) {
+	header("location:manageCourse.php");
     
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);

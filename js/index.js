@@ -7,20 +7,154 @@ $('.close').on('click', function() {
 });
 
 
+function courseSave() {
+		
+		var inTxt = document.getElementById('val').value.replace(/\n/g, "*");
+		var e = document.getElementById("credit");
+		var fgt = e.options[e.selectedIndex].value;
+		var c = val.value;
+		var str = course.value;
+
+		var estr = inTxt.split("*");
+		var i ;
+	
+
+		var my_array = new Array(str,fgt,inTxt);
+		
+		if(str == "")
+		{
+			$.notify({
+				icon: "img/warningNotify.png",
+				title: "โอ๊ะโอ !",
+
+				message: "โปรดระบุ วิชา !"},
 
 
+			{
+				type: 'danger',
+				icon_type: 'image',
+				placement: {
+					from: "top",
+					
+
+				},
+
+				animate: 
+				{
+					enter: 'animated zoomInDown',
+					exit: 'animated zoomOutUp'
+				},
+				
 
 
-function getre(str, num) {
-  if(str === num) return 'nice try';
-  var res = [/^\D+/g,/\D+$/g,/^\D+|\D+$/g,/\D+/g,/\D.*/g, /.*\D/g,/^\D+|\D.*$/g,/.*\D(?=\d)|\D+$/g];
-  for(var i = 0; i < res.length; i++)
-    if(str.replace(/^\D+/g, "") === num) 
-      return 'num = str.replace(/' + res[i].source + '/g, "")';
-  return 'no idea';
-};
-function update() {
-  $ = function(x) { return document.getElementById(x) };
-  var re = getre($('str').value, $('num').value);
-  $('re').innerHTML = 'Numex speaks: <code>' + re + '</code>';
+			});
+		}
+		else if(fgt == 0)
+		{
+			$.notify({
+				icon: "img/warningNotify.png",
+				title: "โอ๊ะโอ !",
+
+				message: "โปรดเลือก หน่วยกิต !"},
+
+
+			{
+				type: 'danger',
+				icon_type: 'image',
+				placement: {
+					from: "top",
+					
+
+				},
+
+				animate: 
+				{
+					enter: 'animated zoomInDown',
+					exit: 'animated zoomOutUp'
+				},
+				
+
+
+			});
+			
+		}
+		else if(c == "")
+		{
+			$.notify({
+				icon: "img/warningNotify.png",
+				title: "โอ๊ะโอ !",
+
+				message: "โปรดระบุ วันเวลาเรียน !"},
+
+
+			{
+				type: 'danger',
+				icon_type: 'image',
+				placement: {
+					from: "top",
+					
+
+				},
+
+				animate: 
+				{
+					enter: 'animated zoomInDown',
+					exit: 'animated zoomOutUp'
+				},
+				
+
+
+			});
+
+		}
+
+		else
+		{
+			
+
+
+			for(i = 0 ; i < estr.length ; i++){
+
+			 $.notify({
+
+	icon: "img/checkNotify.png",
+	// options
+	message: 'บันทึกข้อมูลสำเร็จ วิชา : '+str +"  เวลา: "+estr[i] },
+
+	{
+	// settings
+	
+	icon_type: 'image',
+	placement: {
+		from: "top",	
+	},
+	animate: {
+		enter: 'animated flipInY',
+		exit: 'animated flipOutX'
+	}
+
+});
+
 }
+			
+
+			$.ajax({
+			url : 'checkTime.php',
+			data : {
+				val : inTxt,
+				course : str,
+				credit : fgt,
+			},
+			success : function(data) {
+				slide(data);
+				$('#course').val('');
+				
+			}
+		});
+			}
+   
+}
+
+
+
+
