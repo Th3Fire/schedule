@@ -26,7 +26,7 @@ exit();
                   
                 </li>
                 <li class="has-subnav">
-                    <a href="course.php">
+                    <a href="courseList.php">
                         <i class="fa fa-book fa-2x"></i>
                         <span class="nav-text">
                             รายวิชาทั้งหมด
