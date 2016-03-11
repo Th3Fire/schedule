@@ -59,15 +59,22 @@ exit();
 	
 					<?php
 	$strUserId = $_SESSION['UserID'];
+
 	
 	$sql = "SELECT * FROM test WHERE UserID = '".$strUserId."' ";
-	$result = $con->query($sql);
+
+	$result=mysqli_query($con,$sql);
+	$_result = $con->query($sql);
+	
 	
 
 	
-if ($result->num_rows > 0) {
+if ($_result->num_rows > 0) {
 
-	while($row = $result->fetch_assoc()) {
+	while($row = $_result->fetch_assoc()) {
+
+		$row=mysqli_fetch_array($result,MYSQLI_ASSOC);
+		
 
 		echo "<div class='container'>";
         echo "<div class='panel panel-default'>";
@@ -119,6 +126,7 @@ if ($result->num_rows > 0) {
        
 }
         
+        echo"<input type='submit' value='ลบ' style='float: right' class='btDelete' onclick='deleteCourse()'>";
         
         echo "</div>";
         echo "</div>";
@@ -150,5 +158,7 @@ if ($result->num_rows > 0) {
 	</div>
 
 </div>
+
+
 </body>
 </html>
