@@ -99,7 +99,8 @@ exit();
 					<span>
 					<i class="material-icons">delete</i>Cancel
 					</span>
-					</button>					
+					</button>
+
 					</td>
 					</center>
 				<td valign="top">
