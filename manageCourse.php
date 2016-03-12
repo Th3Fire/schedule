@@ -41,9 +41,13 @@ header("location:login.php");
 exit();
 }
 ?>
+
+<div id="wrapper">
+
 <div>
-	<div>
+	<div id="header">
 	 <?php include 'userdetail.php'; ?>
+	</div>
 	<div>
 		<div class="pen-title">
   		<h1>เพิ่ม รายวิชา</h1>
@@ -51,9 +55,7 @@ exit();
 	</div>
 <!-- content  -->
 <div data-options="region:'center'," style="padding: 10px;" align="center">
-				<!-- breadcrumbs -->
-				<div id="content">
-	<div>
+<div id="content">
 	
 	<div align="center">
 		<table width="100%" height="100%">
@@ -73,15 +75,15 @@ exit();
 						
 						<font size="5">หน่วยกิต : </font> 
 						<span class="css3-metro-dropdown css3-metro-dropdown-color-ff1d77">
-    <select name="credit" id="credit">
-    	<option value="0"> </option>
-        <option value="1">  1  </option>
-        <option value="2">  2  </option>        
-        <option value="3">  3  </option>
-        <option value="4">  4  </option>
-        <option value="8">  8  </option>
-    </select>
-</span>  
+    					<select name="credit" id="credit">
+    					<option value="0"> </option>
+        				<option value="1">  1  </option>
+        				<option value="2">  2  </option>        
+        				<option value="3">  3  </option>
+        				<option value="4">  4  </option>
+        				<option value="8">  8  </option>
+    					</select>
+						</span>  
 					
 					<br />	
 					<br />
@@ -111,14 +113,15 @@ exit();
 	</div>
 </div>
 </div>
-</div>
-</div>
+
 	<div>
 		<?php include 'sideBar.php'; ?>
 	</div>
-	<div>
+	<div id="footer">
 		<?php include 'footer.php'; ?>
 	</div>
+</div>
+
 
 </div>
 <script>

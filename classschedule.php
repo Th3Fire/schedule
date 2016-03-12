@@ -24,16 +24,17 @@ exit();
 
 
 
-<div>
-	<div>
+<div id ="wrapper">
+	<div id="header">
 	 <?php include 'userdetail.php'; ?>
+     </div>
 	<div>
 		<div class="pen-title">
   		<h1>ตารางเรียน</h1>
 		</div>
 	</div>
 	
-	<div>
+	<div id="content">
 		<div data-options="region:'center',title:'พื้นที่การทำงาน',iconCls:'icon-ok'" style="padding: 10px;" align="center">
 				<!-- breadcrumbs -->
 				<div id="content">
@@ -107,15 +108,16 @@ exit();
                     </tr>
     </tbody>
 </table>
-
+</div>
 	
-
+    </div>
+    </div>
 	<div>
 	
 		<?php include 'sideBar.php'; ?>
 	
 	</div>
-	<div>
+	<div id="footer">
 		<?php include 'footer.php'; ?>
 	</div>
 	

@@ -23,7 +23,12 @@
 <script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
 <script type="text/javascript" src="js/bootbox.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
+<style>
+h1.center {
+    text-align: center;
+}	
+	
+</style>
 
 
 	<title>รายวิาชาเรียนของฉัน</title>
@@ -57,14 +62,15 @@ exit();
 
 <!-- content  -->
 
-<div>
-				<td  width="100%" height="100%">
+<div width="100%">
+			
 
-				<div class="container">
+	<div class="container" width="100%">
   
 	
-					<?php
+<?php
 	$strUserId = $_SESSION['UserID'];
+	$rowID;
 
 	
 	$sql = "SELECT * FROM test WHERE UserID = '".$strUserId."' ";
@@ -86,6 +92,7 @@ if ($_result->num_rows > 0) {
         echo "<div class='panel panel-warning' style='width: 100%'>";
         echo "<div class='panel-heading'><font size='4'>วิชา ". $row['CourseName']."</div>";
 
+        $rowID = $row['id'];
 		
 		$data =  $row['Time'];
 		$strs = explode("*", $data);
@@ -116,6 +123,8 @@ if ($_result->num_rows > 0) {
         }else if($day == 'Su'){
         	$day = 'วันอาทิตย์';
         	$_color = 'color=\'red\'>';
+        }else{
+        	$day = 'รูปแบบวันไม่ถูกต้อง';
         }
        
         $timeStr = substr($str, 2, 12);
@@ -127,31 +136,48 @@ if ($_result->num_rows > 0) {
         echo "<br>";
         echo "<font size='4' color='blue'>         เวลาเรียน </font>";
         echo "<font size='4' color='blue'> ".$timeStr."</font>";
+       
         echo "</div>";
-
         
        
 }
        	
+       	
+		
        	echo "
-       	<div style='text-align: right'>
-       	<button  class='btDel' onclick='delCourse($row[id])'>
-						<span class='glyphicon glyphicon-remove'></span> ลบ
-					</button> 
-		</div>
-					
+       
+       	
+			<div style='text-align: right'>
+			<button class='btDel' id='$rowID' >
+			<span class='glyphicon glyphicon-trash'></span> ลบ
+			</button>
+       		</div>
+
+       	 
+
+    
+        
+			
        	";
+
+        
         echo "</div>";
         echo "</td><tr>";
         
     }
 }else
 {
-	echo "ไม่มีข้อมูลของท่านในฐานข้อมูล";
+	echo "
+	<center>
+
+	<p><font size='6' color='red'>ไม่พบรายวิชาในฐานข้อมูล</font></p>
+	</center>
+	";
 }
 ?>
-</td>
 
+
+</div>
 </div>
 
 
@@ -166,6 +192,11 @@ if ($_result->num_rows > 0) {
 </br>
 <!-- content  -->
 
+
+
+
+
+
 	<div>
 		<?php include 'sideBar.php'; ?>
 	</div>
@@ -176,40 +207,75 @@ if ($_result->num_rows > 0) {
 </div>
 
 <script>
-    
- $('#myModal').on('click', '.btn-ok', function(e) {
- 	
-  	 
 
-  	
-  	 
-  	 
-  	
-  	$.ajax({
-			url : 'delete.php',
-			data : {
-				id : , sStr
-				
-			},
-			success : function(data) {
-				
 
-				
-			}
-		});
+$(document).on('click', '.btDel', function(e) {
+        	var x = ($(this).attr('id'));
+            e.preventDefault();
 
+        bootbox.dialog({
   
-  });
-
-
+  message: "คุณแน่ใจที่จะลบหรือไม่ ?",
  
+  title: "แจ้งเตือน !!!",
 
+  onEscape: function() {},
  
+  show: true,
+  size: 'small',
 
+  backdrop: 'static',
 
-// Bind to modal opening to set necessary data properties to be used to make request
-
+  closeButton: true,
+  
+  animate: true,
+ 
+  className: "my-modal",
+ 
+  buttons: {
     
+      success: {   
+    
+      label: "ยืนยัน",
+      
+      
+      className: "btn-danger",
+      
+     
+      callback: function() 
+      {
+
+      	$.ajax(
+		  		{
+				url : 'delete.php',
+				data : 
+				{
+					id : x,
+				
+				},
+			success : function(data) 
+			{
+				window.location.replace("courseList.php");
+			}
+		  });
+      }
+    },
+    
+   
+    "ยกเลิก": {
+      className: "btn-primary",
+      callback: function() {}
+    },
+    
+
+   
+  }
+});
+
+        });
+
+        
 </script>
+
 </body>
 </html>

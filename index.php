@@ -25,8 +25,8 @@ exit();
 ?>
 
 
-<div>
-	<div>
+<div id="wrapper">
+	<div id ="header">
 	 <?php include 'userdetail.php'; ?>
 	</div>
 	<div>
@@ -37,7 +37,7 @@ exit();
 	<div>
 		<?php include 'sideBar.php'; ?>
 	</div>
-	<div>
+	<div id ="footer">
 		<?php include 'footer.php'; ?>
 	</div>
 	
