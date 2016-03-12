@@ -47,7 +47,7 @@ exit();
 
 ?>
 <div>
-	<div id="header">
+	<div>
 	 <?php include 'userdetail.php'; ?>
 	</div>
 	<div>
@@ -62,7 +62,7 @@ exit();
 
 <!-- content  -->
 
-<div id="content">
+
 			
 
 	<div class="container" width="100%">
@@ -73,6 +73,7 @@ exit();
 	$rowID;
 	$totalCredit = 0;
 	$totalCourse = 0;
+
 
 	
 	$sql = "SELECT * FROM test WHERE UserID = '".$strUserId."' ";
@@ -93,8 +94,8 @@ if ($_result->num_rows > 0) {
 
         echo "<div class='panel panel-warning' style='width: 100%'>";
         echo "<div class='panel-heading'><font size='4'>วิชา ". $row['CourseName']."</div>";
-        $totalCourse++;
-        $rowID = $row['id'];
+    $totalCourse++;
+    $rowID = $row['id'];
 		$totalCredit = $row['Credit'] + $totalCredit;
 		$data =  $row['Time'];
 		$strs = explode("*", $data);
@@ -167,7 +168,10 @@ if ($_result->num_rows > 0) {
         echo "</td><tr>";
         
     }
-}else
+}
+
+
+else
 {
 	echo "
 	<center>
@@ -177,12 +181,16 @@ if ($_result->num_rows > 0) {
 	";
 }
 
-
-echo "
+if($_result->num_rows > 0){
+  echo "
 <center>
 
 รวม $totalCourse วิชา $totalCredit หน่วยกิต
-</center>"
+</center>";
+}
+
+
+
 ?>
 
 
@@ -203,7 +211,7 @@ echo "
 	<div>
 		<?php include 'sideBar.php'; ?>
 	</div>
-	<div id="footer">
+	<div>
 		<?php include 'footer.php'; ?>
 	</div>
 
