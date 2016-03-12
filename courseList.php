@@ -31,7 +31,7 @@ h1.center {
 </style>
 
 
-	<title>รายวิาชาเรียนของฉัน</title>
+	<title>รายวิชาเรียนของฉัน</title>
 </head>
 <body>
 <?php
@@ -47,12 +47,12 @@ exit();
 
 ?>
 <div>
-	<div>
+	<div id="header">
 	 <?php include 'userdetail.php'; ?>
 	</div>
 	<div>
 		<div class="pen-title">
-  		<h1>รายวิชาทั้งหมด</h1>
+  		<font size="8">รายวิชาทั้งหมด</font>
 		</div>
 	</div>
 
@@ -62,7 +62,7 @@ exit();
 
 <!-- content  -->
 
-<div width="100%">
+<div id="content">
 			
 
 	<div class="container" width="100%">
@@ -71,6 +71,8 @@ exit();
 <?php
 	$strUserId = $_SESSION['UserID'];
 	$rowID;
+	$totalCredit = 0;
+	$totalCourse = 0;
 
 	
 	$sql = "SELECT * FROM test WHERE UserID = '".$strUserId."' ";
@@ -91,9 +93,9 @@ if ($_result->num_rows > 0) {
 
         echo "<div class='panel panel-warning' style='width: 100%'>";
         echo "<div class='panel-heading'><font size='4'>วิชา ". $row['CourseName']."</div>";
-
+        $totalCourse++;
         $rowID = $row['id'];
-		
+		$totalCredit = $row['Credit'] + $totalCredit;
 		$data =  $row['Time'];
 		$strs = explode("*", $data);
 		$_color = '';
@@ -174,6 +176,13 @@ if ($_result->num_rows > 0) {
 	</center>
 	";
 }
+
+
+echo "
+<center>
+
+รวม $totalCourse วิชา $totalCredit หน่วยกิต
+</center>"
 ?>
 
 
@@ -183,13 +192,7 @@ if ($_result->num_rows > 0) {
 
 
 </div>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
+
 <!-- content  -->
 
 
@@ -200,7 +203,7 @@ if ($_result->num_rows > 0) {
 	<div>
 		<?php include 'sideBar.php'; ?>
 	</div>
-	<div>
+	<div id="footer">
 		<?php include 'footer.php'; ?>
 	</div>
 
