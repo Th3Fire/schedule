@@ -496,7 +496,7 @@ nav.main-menu.expanded {
   position: absolute;
   top: 0;
   bottom: 0;
-  height: 91%;
+  height: 100%;
   left: 0;
   width: 60px;
   overflow: hidden;
