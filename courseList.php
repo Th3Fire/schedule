@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <link rel="stylesheet" href="css/reset.css">
 <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/bootstrap.css">
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/animate.css">
 <link href="metro-icons.css" rel="stylesheet">
+
+
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+
 <script type="text/javascript" src="js/index.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
 <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
 <script type="text/javascript" src="js/jquery-1.12.1.js"></script>
 <script type="text/javascript" src="js/bootstrap-notify.js"></script>
 <script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
 
+<script type="text/javascript" src="js/bootbox.min.js"></script>
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 	<title>รายวิาชาเรียนของฉัน</title>
 </head>
@@ -76,7 +85,6 @@ if ($_result->num_rows > 0) {
 		$row=mysqli_fetch_array($result,MYSQLI_ASSOC);
 		
 
-		echo "<div class='container'>";
         echo "<div class='panel panel-default'>";
         echo "<div class='panel-heading'><font size='4'>วิชา   ". $row['CourseName']."</font></div>";
 
@@ -126,10 +134,12 @@ if ($_result->num_rows > 0) {
        
 }
         
-        echo"<input type='submit' value='ลบ' style='float: right' class='btDelete' onclick='deleteCourse()'>";
+         echo"
+
+        <button type='button' id='delFunc' class='btDel' style='float: right' data-toggle='modal' data-target='#myModal'>ลบ</button>
+      ";
+        echo "</div>";
         
-        echo "</div>";
-        echo "</div>";
         
     }
 }else
@@ -150,6 +160,8 @@ if ($_result->num_rows > 0) {
 </div>
 
 
+
+
 	<div>
 		<?php include 'sideBar.php'; ?>
 	</div>
@@ -159,6 +171,46 @@ if ($_result->num_rows > 0) {
 
 </div>
 
+<script>
+    
+$(document).ready(function() {
 
+	$(document).on("click","#delFunc",function() {
+		bootbox.dialog({
+  size: 'small',
+  message: "I am a custom dialog",
+  title: "Custom title",
+  buttons: {
+    success: {
+      label: "Success!",
+      className: "btn-success",
+      callback: function() {
+      	window.location="http://www.domainname.com";
+      
+      }
+    },
+    danger: {
+      label: "Danger!",
+      className: "btn-danger",
+      callback: function() {
+        
+      }
+    },
+    main: {
+      label: "Click ME!",
+      className: "btn-primary",
+      callback: function() {
+        
+      }
+    }
+  }
+});
+        
+    });
+
+            
+        });    
+    
+</script>
 </body>
 </html>
