@@ -56,7 +56,7 @@ exit();
 	<div>
 	
 	<div align="center">
-		<table width="100%">
+		<table width="100%" height="100%">
 		<colgroup>
        <col span="1" style="width: 5%;">
        <col span="1" style="width: 30%;">

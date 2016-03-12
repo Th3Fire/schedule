@@ -21,10 +21,10 @@
 <script type="text/javascript" src="js/jquery-1.12.1.js"></script>
 <script type="text/javascript" src="js/bootstrap-notify.js"></script>
 <script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
-
 <script type="text/javascript" src="js/bootbox.min.js"></script>
-
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
 
 	<title>รายวิาชาเรียนของฉัน</title>
 </head>
@@ -40,7 +40,6 @@ header("location:login.php");
 exit();
 }
 
-
 ?>
 <div>
 	<div>
@@ -51,16 +50,14 @@ exit();
   		<h1>รายวิชาทั้งหมด</h1>
 		</div>
 	</div>
-<!-- content  -->
+
+
+	<!-- grid  -->
+
 
 <!-- content  -->
 
-				<!-- breadcrumbs -->
 <div>
-		<table width="100%">
-
-
-				<center>
 				<td  width="100%" height="100%">
 
 				<div class="container">
@@ -84,9 +81,10 @@ if ($_result->num_rows > 0) {
 
 		$row=mysqli_fetch_array($result,MYSQLI_ASSOC);
 		
+		echo "<tr><td>";
 
-        echo "<div class='panel panel-default'>";
-        echo "<div class='panel-heading'><font size='4'>วิชา   ". $row['CourseName']."</font></div>";
+        echo "<div class='panel panel-warning' style='width: 100%'>";
+        echo "<div class='panel-heading'><font size='4'>วิชา ". $row['CourseName']."</div>";
 
 		
 		$data =  $row['Time'];
@@ -125,42 +123,48 @@ if ($_result->num_rows > 0) {
         $times = explode("-", $timeStr);
         echo " <div class='panel-body'>";
         
-        echo "<font size='4' ".$_color."   ".$day."</font>";
+        echo "<font size='4' color='red'>  ".$day."</font>";
         echo "<br>";
-        echo "<font size='4' color='white'>         เวลาเรียน </font>";
-        echo "<font size='4' color='white'> ".$timeStr."</font>";
+        echo "<font size='4' color='blue'>         เวลาเรียน </font>";
+        echo "<font size='4' color='blue'> ".$timeStr."</font>";
         echo "</div>";
+
         
        
 }
-        
-         echo"
-
-        <button type='button' id='delFunc' class='btDel' style='float: right' data-toggle='modal' data-target='#myModal'>ลบ</button>
-      ";
+       	
+       	echo "
+       	<div style='text-align: right'>
+       	<button  class='btDel' onclick='delCourse($row[id])'>
+						<span class='glyphicon glyphicon-remove'></span> ลบ
+					</button> 
+		</div>
+					
+       	";
         echo "</div>";
-        
+        echo "</td><tr>";
         
     }
 }else
 {
-	echo " 0 results";
+	echo "ไม่มีข้อมูลของท่านในฐานข้อมูล";
 }
 ?>
-					
+</td>
 
-			
-					
-					
-					</td>
-					</center>
-		
-		</table>
-	
 </div>
 
 
 
+</div>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<!-- content  -->
 
 	<div>
 		<?php include 'sideBar.php'; ?>
@@ -173,43 +177,38 @@ if ($_result->num_rows > 0) {
 
 <script>
     
-$(document).ready(function() {
+ $('#myModal').on('click', '.btn-ok', function(e) {
+ 	
+  	 
 
-	$(document).on("click","#delFunc",function() {
-		bootbox.dialog({
-  size: 'small',
-  message: "I am a custom dialog",
-  title: "Custom title",
-  buttons: {
-    success: {
-      label: "Success!",
-      className: "btn-success",
-      callback: function() {
-      	window.location="http://www.domainname.com";
-      
-      }
-    },
-    danger: {
-      label: "Danger!",
-      className: "btn-danger",
-      callback: function() {
-        
-      }
-    },
-    main: {
-      label: "Click ME!",
-      className: "btn-primary",
-      callback: function() {
-        
-      }
-    }
-  }
-});
-        
-    });
+  	
+  	 
+  	 
+  	
+  	$.ajax({
+			url : 'delete.php',
+			data : {
+				id : , sStr
+				
+			},
+			success : function(data) {
+				
 
-            
-        });    
+				
+			}
+		});
+
+  
+  });
+
+
+ 
+
+ 
+
+
+// Bind to modal opening to set necessary data properties to be used to make request
+
     
 </script>
 </body>

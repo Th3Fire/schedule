@@ -158,40 +158,24 @@ function courseSave() {
 
 
 
-function deleteCourse() {
-		
-		var x = "<?php echo $strUserId ; ?>";
-		
-			$.notify({
 
-	icon: "img/checkNotify.png",
-	// options
-	message: 'vvs'+x },
 
-	{
-	// settings
-	
-	icon_type: 'image',
-	placement: {
-		from: "top",	
-	},
-	animate: {
-		enter: 'animated flipInY',
-		exit: 'animated flipOutX'
-	}
 
-});
+function delCourse(val) {
 
-			$.ajax({
+
+      $.ajax({
 			url : 'delete.php',
 			data : {
-				id : x,
+				id : val,
 				
 			},
 			success : function(data) {
 				
+				window.location.replace("courseList.php");
+				
 				
 			}
 		});
-
+	
 }
