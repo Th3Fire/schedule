@@ -146,8 +146,6 @@ function courseSave() {
 				credit : fgt,
 			},
 			success : function(data) {
-				slide(data);
-				$('#course').val('');
 				
 			}
 		});
@@ -155,27 +153,42 @@ function courseSave() {
    
 }
 
+$('.close').on('click', function() {
+  $('.container').stop().removeClass('active');
+});
 
 
+$(document).on('click', '.alert', function(e) {
+        	var x = ($(this).attr('id'));
+            e.preventDefault();
 
-
-
-
-function delCourse(val) {
-
-
-      $.ajax({
-			url : 'delete.php',
-			data : {
-				id : val,
+        bootbox.confirm(
+        { 
+    	size: 'small',
+    	message: "Your message here…", 
+    	title : "แจ้งเตือน",
+    	callback: function(result){ /* your callback code */ 
+		
+			if(result)
+			{
+			 	$.ajax(
+		  		{
+				url : 'delete.php',
+				data : 
+				{
+					id : x,
 				
-			},
-			success : function(data) {
-				
+				},
+			success : function(data) 
+			{
 				window.location.replace("courseList.php");
-				
-				
 			}
-		});
-	
-}
+		  });
+
+
+		}
+		}
+
+		})
+
+        });
