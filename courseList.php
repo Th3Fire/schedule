@@ -97,7 +97,7 @@ if ($_result->num_rows > 0) {
     $rowID = $row['id'];
 		$totalCredit = $row['Credit'] + $totalCredit;
 		$data =  $row['Time'];
-		$strs = explode("*", $data);
+		$strs = explode("#", $data);
 		$_color = '';
 		$_colorTime = 'color=\'white\'>';
 		$_dd = '\"';
