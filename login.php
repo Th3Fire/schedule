@@ -12,9 +12,6 @@
 
         <link rel="stylesheet" href="css/lgstyle.css">
 
-    
-    
-    
   </head>
 
   <body>
