@@ -75,7 +75,7 @@ exit();
 
 
 	
-	$sql = "SELECT * FROM test WHERE UserID = '".$strUserId."' ";
+	$sql = "SELECT * FROM course WHERE UserID = '".$strUserId."' ";
 
 	$result=mysqli_query($con,$sql);
 	$_result = $con->query($sql);

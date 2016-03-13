@@ -1,7 +1,7 @@
 <?php
 require_once("connect.php");
 
-$sql = "DELETE FROM test WHERE id=".$_GET['id'];
+$sql = "DELETE FROM course WHERE id=".$_GET['id'];
 
 if (mysqli_query($con, $sql)) {
     echo "Record deleted successfully";
