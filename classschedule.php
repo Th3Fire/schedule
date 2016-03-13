@@ -7,6 +7,7 @@
 <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style2.css">
 	<title>ตารางเรียน</title>
 </head>
 <body>
@@ -35,6 +36,7 @@ exit();
 		<div data-options="region:'center',title:'พื้นที่การทำงาน',iconCls:'icon-ok'" style="padding: 10px;" align="center">
 				<!-- breadcrumbs -->
 				<div id="content">
+                <font size="10" color="red"> Error อยู่ระหว่างปรับปรุง</font>
 	<table id="tb_course" style="border:2px solid #000;margin-top:20px;" align="center">
     <thead>
         <tr class="cell-Time">

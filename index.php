@@ -33,7 +33,7 @@ exit();
 <!-- head -->
 <div>
 <div class="pen-title">
-<font size="8">รายวิชาทั้งหมด</font>
+<font size="8">Schedul System ระบบจัดตารางเรียน</font>
 </div>
 </div>
 <!-- end head -->

@@ -1,11 +1,3 @@
-$('.toggle').on('click', function() {
-  $('.container').stop().addClass('active');
-});
-
-$('.close').on('click', function() {
-  $('.container').stop().removeClass('active');
-});
-
 
 function courseSave() {
 		
@@ -34,24 +26,24 @@ function courseSave() {
 		{
 			$.notify({
 				icon: "img/warningNotify.png",
-				title: "โอ๊ะโอ !",
+				title: "<font size='6'>โอ๊ะโอ </font>",
 
-				message: "โปรดระบุ วิชา !"},
+				message: "<font size='6'> โปรดระบุ วิชา ! </font>"},
 
 
 			{
 				type: 'danger',
 				icon_type: 'image',
 				placement: {
-					from: "top",
+					from: "bottom",
 					
 
 				},
 
 				animate: 
 				{
-					enter: 'animated zoomInDown',
-					exit: 'animated zoomOutUp'
+					enter: 'animated shake',
+					exit: 'animated bounceOutRight'
 				},
 				
 
@@ -62,24 +54,24 @@ function courseSave() {
 		{
 			$.notify({
 				icon: "img/warningNotify.png",
-				title: "โอ๊ะโอ !",
+				title: "<font size='6'>โอ๊ะโอ </font>",
 
-				message: "โปรดเลือก หน่วยกิต !"},
+				message: "<font size='6'>โปรดเลือก หน่วยกิต !</font>"},
 
 
 			{
 				type: 'danger',
 				icon_type: 'image',
 				placement: {
-					from: "top",
+					from: "bottom",
 					
 
 				},
 
 				animate: 
 				{
-					enter: 'animated zoomInDown',
-					exit: 'animated zoomOutUp'
+					enter: 'animated shake',
+					exit: 'animated bounceOutRight'
 				},
 				
 
@@ -91,24 +83,24 @@ function courseSave() {
 		{
 			$.notify({
 				icon: "img/warningNotify.png",
-				title: "โอ๊ะโอ !",
+				title: "<font size='6'>โอ๊ะโอ </font>",
 
-				message: "โปรดระบุ วันเวลาเรียน !"},
+				message: "<font size='6'>โปรดระบุ วันเวลาเรียน !</font>"},
 
 
 			{
 				type: 'danger',
 				icon_type: 'image',
 				placement: {
-					from: "top",
+					from: "bottom",
 					
 
 				},
 
 				animate: 
 				{
-					enter: 'animated zoomInDown',
-					exit: 'animated zoomOutUp'
+					enter: 'animated shake',
+					exit: 'animated bounceOutRight'
 				},
 				
 
@@ -119,24 +111,24 @@ function courseSave() {
 
 			$.notify({
 				icon: "img/warningNotify.png",
-				title: "โอ๊ะโอ !",
+				title: "<font size='6'>โอ๊ะโอ </font>",
 
-				message: "รูปแบบเวลาไม่ถูกต้อง"},
+				message: "<font size='6'>รูปแบบเวลาไม่ถูกต้อง</font>"},
 
 
 			{
 				type: 'danger',
 				icon_type: 'image',
 				placement: {
-					from: "top",
+					from: "bottom",
 					
 
 				},
 
 				animate: 
 				{
-					enter: 'animated zoomInDown',
-					exit: 'animated zoomOutUp'
+					enter: 'animated shake',
+					exit: 'animated bounceOutRight'
 				},
 				
 
@@ -156,14 +148,14 @@ function courseSave() {
 
 	icon: "img/checkNotify.png",
 	// options
-	message: 'บันทึกข้อมูลสำเร็จ วิชา : '+str+"  เวลา: "+estr[i]},
+	message: "<font size='6'>บันทึกข้อมูลสำเร็จ วิชา : "+str+"  เวลา: "+estr[i] +"</font"},
 
 	{
 	// settings
 	
 	icon_type: 'image',
 	placement: {
-		from: "top",	
+		from: "bottom",	
 	},
 	animate: {
 		enter: 'animated flipInY',
@@ -191,7 +183,7 @@ function courseSave() {
 }
 
 $('.close').on('click', function() {
-  $('.container').stop().removeClass('active');
+  $('.container').sbottom().removeClass('active');
 });
 
 
