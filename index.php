@@ -24,24 +24,40 @@ exit();
 
 ?>
 
-
-<div id="wrapper">
-	<div id ="header">
-	 <?php include 'userdetail.php'; ?>
-	</div>
-	<div>
-		<div class="pen-title">
-  		<h1>Home</h1>
-		</div>
-	</div>
-	<div>
-		<?php include 'sideBar.php'; ?>
-	</div>
-	<div id ="footer">
-		<?php include 'footer.php'; ?>
-	</div>
-	
+ <!-- header -->
+<div>
+<?php include 'userdetail.php'; ?>
 </div>
+<!-- end header -->
+
+<!-- head -->
+<div>
+<div class="pen-title">
+<font size="8">รายวิชาทั้งหมด</font>
+</div>
+</div>
+<!-- end head -->
+
+<!-- content  -->
+<div class="main">
+
+</div>
+<!-- content  -->
+
+<!-- side bar -->
+<div >
+<?php include 'sideBar.php'; ?>
+</div>
+<!--end side bar -->
+
+<!--footer -->
+<div class="footer">
+<?php include 'footer.php'; ?>
+</div>
+<!--end footer -->
+
+
+
 
 </body>
 </html>

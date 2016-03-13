@@ -46,26 +46,25 @@ exit();
 }
 
 ?>
-<div>
-	<div>
-	 <?php include 'userdetail.php'; ?>
-	</div>
-	<div>
-		<div class="pen-title">
-  		<font size="8">รายวิชาทั้งหมด</font>
-		</div>
-	</div>
+
+  <!-- header -->
+  <div>
+   <?php include 'userdetail.php'; ?>
+  </div>
+  <!-- end header -->
+  <!-- head -->
+  <div>
+  <div class="pen-title">
+    <font size="8">รายวิชาทั้งหมด</font>
+  </div>
+  </div>
+  <!-- end head -->
 
 
-	<!-- grid  -->
-
+<div class="main">
 
 <!-- content  -->
-
-
-			
-
-	<div class="container" width="100%">
+<div class="container" width="100%">
   
 	
 <?php
@@ -195,31 +194,30 @@ if($_result->num_rows > 0){
 
 
 </div>
-</div>
-
-
 
 </div>
+
+
 
 <!-- content  -->
 
 
 
 
+<!-- side bar -->
+  <div >
+    <?php include 'sideBar.php'; ?>
+  </div>
+<!--end side bar -->
 
 
-	<div>
-		<?php include 'sideBar.php'; ?>
-	</div>
-	<div>
+	<div class="footer">
 		<?php include 'footer.php'; ?>
 	</div>
 
-</div>
+
 
 <script>
-
-
 $(document).on('click', '.btDel', function(e) {
         	var x = ($(this).attr('id'));
             e.preventDefault();

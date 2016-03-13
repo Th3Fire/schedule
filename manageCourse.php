@@ -41,50 +41,47 @@ header("location:login.php");
 exit();
 }
 ?>
-
-<div id="wrapper">
-
+<!-- start header -->
 <div>
-	<div id="header">
-	 <?php include 'userdetail.php'; ?>
-	</div>
-	<div>
-		<div class="pen-title">
-  		<h1>เพิ่ม รายวิชา</h1>
-		</div>
-	</div>
-<!-- content  -->
+<?php include 'userdetail.php'; ?>
+</div>
+<!-- end header -->
+<!-- start head -->
+<div>
+<div class="pen-title">
+ <h1>เพิ่ม รายวิชา</h1>
+</div>
+</div>
+<!-- end head -->
+
+<!-- start content  -->
 <div data-options="region:'center'," style="padding: 10px;" align="center">
-<div id="content">
-	
-	<div align="center">
-		<table width="100%" height="100%">
-		<colgroup>
+<div class="main">
+<div align="center">
+	<table width="100%" height="100%">
+	<colgroup>
        <col span="1" style="width: 5%;">
        <col span="1" style="width: 30%;">
        <col span="1" style="width: 70%;">
-    	</colgroup>
+    </colgroup>
 			<tr>
 			<td> </td>
 				<center>
 				<td valign="top" width="40%">
-					
-						<font size="5">วิชา : </font> 
-						<span></span> 
-							<input class="enjoy-css" name="course" id="course" /></div>
+				<font size="5">วิชา : </font> 
+				<input class="enjoy-css" name="course" id="course" />
 						
-						<font size="5">หน่วยกิต : </font> 
-						<span class="css3-metro-dropdown css3-metro-dropdown-color-ff1d77">
-    					<select name="credit" id="credit">
-    					<option value="0"> </option>
-        				<option value="1">  1  </option>
-        				<option value="2">  2  </option>        
-        				<option value="3">  3  </option>
-        				<option value="4">  4  </option>
-        				<option value="8">  8  </option>
-    					</select>
-						</span>  
-					
+					<font size="5">หน่วยกิต : </font> 
+					<span class="css3-metro-dropdown css3-metro-dropdown-color-ff1d77">
+    				<select name="credit" id="credit">
+    				<option value="0"> </option>
+        			<option value="1">  1  </option>
+        			<option value="2">  2  </option>        
+        			<option value="3">  3  </option>
+        			<option value="4">  4  </option>
+        			<option value="8">  8  </option>
+    				</select>
+					</span>  
 					<br />	
 					<br />
 					<form name="form2" method="post">
@@ -102,10 +99,9 @@ exit();
 					<i class="material-icons">delete</i>Cancel
 					</span>
 					</button>
-
 					</td>
 					</center>
-				<td valign="top">
+					<td valign="top">
 					<iframe style="border: 1px solid #000;" frameborder="0" width="100%;" height="450px" name="_reg" id="reg" src="https://reg2.sut.ac.th/registrar/class_info.asp"></iframe>
 				</td>
 			</tr>
@@ -114,16 +110,18 @@ exit();
 </div>
 </div>
 
-	<div>
-		<?php include 'sideBar.php'; ?>
-	</div>
-	<div id="footer">
-		<?php include 'footer.php'; ?>
-	</div>
+<!-- start side bar -->
+<div>
+<?php include 'sideBar.php'; ?>
 </div>
+<!-- end side bar -->
 
-
+<!-- start footer -->
+<div class="footer">
+<?php include 'footer.php'; ?>
 </div>
+<!-- end footer -->
+
 <script>
 </script>
 </body>
