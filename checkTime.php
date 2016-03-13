@@ -24,7 +24,7 @@ $UserID = $_SESSION['UserID'];
 
 
 
-	$sql = "INSERT INTO test (CourseName,Time,Credit,UserID) VALUES('$courseName','$val','$credit','$UserID')";
+	$sql = "INSERT INTO course (CourseName,Time,Credit,UserID) VALUES('$courseName','$val','$credit','$UserID')";
 	
 if (mysqli_query($con, $sql)) {
 	header("location:manageCourse.php");

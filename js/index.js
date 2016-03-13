@@ -21,21 +21,12 @@ function courseSave() {
 		var estr = inTxt.split("#");
 
 		
-
-
-
-
-
-
-		
 		if(count >= 0){
 			for(i=0 ;i<estr.length;i++){
 
 			 reg = estr[i].match(/^(Mo|Tu|We|Th|Fr|Sa|Su)[0-9]{2}[:]{1}[0-9]{2}[-]{1}[0-9]{2}[:]{1}[0-9]{2}./);
 			}
 		}
-
-	
 
 		var my_array = new Array(str,fgt,inTxt);
 		
