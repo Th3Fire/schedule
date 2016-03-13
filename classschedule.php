@@ -22,10 +22,7 @@ exit();
 ?>
 
 
-
-
-<div id ="wrapper">
-	<div id="header">
+	<div>
 	 <?php include 'userdetail.php'; ?>
      </div>
 	<div>
@@ -34,7 +31,7 @@ exit();
 		</div>
 	</div>
 	
-	<div id="content">
+	<div class="main">
 		<div data-options="region:'center',title:'พื้นที่การทำงาน',iconCls:'icon-ok'" style="padding: 10px;" align="center">
 				<!-- breadcrumbs -->
 				<div id="content">
@@ -112,16 +109,15 @@ exit();
 	
     </div>
     </div>
-	<div>
-	
-		<?php include 'sideBar.php'; ?>
-	
-	</div>
-	<div id="footer">
-		<?php include 'footer.php'; ?>
-	</div>
-	
+<!-- start side bar -->
+<div>
+<?php include 'sideBar.php'; ?>
 </div>
-
+<!-- end side bar -->
+<!-- start footer -->
+<div class="footer">
+<?php include 'footer.php'; ?>
+</div>
+<!-- end footer -->
 </body>
 </html>
