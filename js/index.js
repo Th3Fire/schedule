@@ -9,14 +9,32 @@ $('.close').on('click', function() {
 
 function courseSave() {
 		
-		var inTxt = document.getElementById('val').value.replace(/\n/g, "*");
+		var inTxt = document.getElementById('val').value.replace(/\n/g, "#");
 		var e = document.getElementById("credit");
 		var fgt = e.options[e.selectedIndex].value;
 		var c = val.value;
 		var str = course.value;
+		var len = inTxt.search('#');
+		var len2 = len.length;
+		var count = (inTxt.match(/#/g) || []).length;
+		var reg ="";
+		var estr = inTxt.split("#");
 
-		var estr = inTxt.split("*");
-		var i ;
+		
+
+
+
+
+
+
+		
+		if(count >= 0){
+			for(i=0 ;i<estr.length;i++){
+
+			 reg = estr[i].match(/^(Mo|Tu|We|Th|Fr|Sa|Su)[0-9]{2}[:]{1}[0-9]{2}[-]{1}[0-9]{2}[:]{1}[0-9]{2}./);
+			}
+		}
+
 	
 
 		var my_array = new Array(str,fgt,inTxt);
@@ -106,6 +124,34 @@ function courseSave() {
 
 			});
 
+		}else if(reg == null){
+
+			$.notify({
+				icon: "img/warningNotify.png",
+				title: "โอ๊ะโอ !",
+
+				message: "รูปแบบเวลาไม่ถูกต้อง"},
+
+
+			{
+				type: 'danger',
+				icon_type: 'image',
+				placement: {
+					from: "top",
+					
+
+				},
+
+				animate: 
+				{
+					enter: 'animated zoomInDown',
+					exit: 'animated zoomOutUp'
+				},
+				
+
+
+			});
+
 		}
 
 		else
@@ -119,7 +165,7 @@ function courseSave() {
 
 	icon: "img/checkNotify.png",
 	// options
-	message: 'บันทึกข้อมูลสำเร็จ วิชา : '+str +"  เวลา: "+estr[i] },
+	message: 'บันทึกข้อมูลสำเร็จ วิชา : '+str+"  เวลา: "+estr[i]},
 
 	{
 	// settings
