@@ -23,26 +23,39 @@ exit();
 ?>
 
 
-	<div>
-	 <?php include 'userdetail.php'; ?>
-     </div>
-	<div>
-		<div class="pen-title">
-  		<h1>ตารางเรียน</h1>
-		</div>
-	</div>
+	<!-- header -->
+  <div>
+   <?php include 'userdetail.php'; ?>
+  </div>
+  <!-- end header -->
+    <!-- head -->
+  <div>
+  <div class="pen-title">
+    <font size="8">ตารางเรียน</font>
+  </div>
+  </div>
+  <!-- end head -->
 	
-	<div class="main">
-		<div data-options="region:'center',title:'พื้นที่การทำงาน',iconCls:'icon-ok'" style="padding: 10px;" align="center">
-				<!-- breadcrumbs -->
-				<div id="content">
-                <font size="10" color="red"> Error อยู่ระหว่างปรับปรุง</font>
-	<table id="tb_course" style="border:2px solid #000;margin-top:20px;" align="center">
+<div class="main">
+
+<!-- content  -->
+<div data-options="region:'center',title:'พื้นที่การทำงาน',iconCls:'icon-ok'" style="padding: 10px;" align="center">
+        <!-- breadcrumbs -->
+        <div id="content">
+  <table id="tb_course" style="border:2px solid #000;margin-top:20px;" align="center">
     <thead>
         <tr class="cell-Time">
             <td class="cell-TB" width="100px" style="font-weight:bold;color:#FFF;text-align:center;font-size:14pt;">
-            	วัน/เวลา
+              วัน/เวลา
             </td>
+                        <td class="cell-TB" colspan="2">
+                09:00-10:00            </td>
+                        <td class="cell-TB" colspan="2">
+                10:00-11:00            </td>
+                        <td class="cell-TB" colspan="2">
+                11:00-12:00            </td>
+                        <td class="cell-TB" colspan="2">
+                12:00-13:00            </td>
                         <td class="cell-TB" colspan="2">
                 13:00-14:00            </td>
                         <td class="cell-TB" colspan="2">
@@ -55,44 +68,76 @@ exit();
                 17:00-18:00            </td>
                         <td class="cell-TB" colspan="2">
                 18:00-19:00            </td>
+                        <td class="cell-TB" colspan="2">
+                19:00-20:00            </td>
+                        <td class="cell-TB" colspan="2">
+                20:00-21:00            </td>
+                        <td class="cell-TB" colspan="2">
+                21:00-22:00            </td>
                     </tr>
     </thead>
     <tbody>
                 <tr class="cell-Bg">
             <td class="cell-TB cell-Day">
-            	วันจันทร์            </td>
-                            	                    	<td class="cell-TB" colspan="2">&nbsp;</td>
-                                                        	                            	                    	<td class="cell-TB" colspan="2">&nbsp;</td>
-                                                        	                            	                    	<td class="cell-TB" colspan="2">&nbsp;</td>
-                                                        	                            	                    	<td class="cell-TB" colspan="2">&nbsp;</td>
-                                                        	            		            <td id="dd" class="cell-TB cell-Course" colspan="3">
-		            	KOREAN (203431) sec1		            </td> 
-           		                            	                        <td class="cell-TB">&nbsp;</td>
-                                	                    </tr>
+              วันจันทร์            </td>
+                            <td id="dd" class="cell-TB cell-Course" colspan="3">
+                  fgbsdf                </td> 
+<td class="cell-TB">&nbsp;</td>
+<td class="cell-TB" colspan="2">&nbsp;</td>
+<td class="cell-TB" colspan="2">&nbsp;</td>
+<td class="cell-TB" colspan="2">&nbsp;</td>
+</tr>
                 <tr class="cell-Bg">
             <td class="cell-TB cell-Day">
-            	วันอังคาร            </td>
-            		            <td id="dd" class="cell-TB cell-Course" colspan="4">
-		            	dfasdf		            </td> 
-           		                            	                    	<td class="cell-TB" colspan="2">&nbsp;</td>
-                                                        	                            	                    	<td class="cell-TB" colspan="2">&nbsp;</td>
-                                                        	                            	                    	<td class="cell-TB" colspan="2">&nbsp;</td>
-                                                        	                            	                    	<td class="cell-TB" colspan="2">&nbsp;</td>
-                                                        	                    </tr>
+              วันพุธ            </td>
+<td class="cell-TB" colspan="2">&nbsp;</td>
+<td class="cell-TB" colspan="2">&nbsp;</td>
+<td class="cell-TB" colspan="2">&nbsp;</td>
+<td class="cell-TB" colspan="2">&nbsp;</td>
+<td class="cell-TB" colspan="2">&nbsp;</td>
+<td class="cell-TB" colspan="2">&nbsp;</td>
+<td class="cell-TB" colspan="2">&nbsp;</td>
+<td class="cell-TB" colspan="2">&nbsp;</td>
+<td class="cell-TB" colspan="2">&nbsp;</td>
+<td class="cell-TB" colspan="2">&nbsp;</td>
+<td class="cell-TB" colspan="2">&nbsp;</td>
+                                                                                      <td id="dd" class="cell-TB cell-Course" colspan="4">
+                  fff               </td> 
+                                  </tr>
                 <tr class="cell-Bg">
             <td class="cell-TB cell-Day">
-            	วันพุธ            </td>
-                            	                    	<td class="cell-TB" colspan="2">&nbsp;</td>
-                                                        	                            	                    	<td class="cell-TB" colspan="2">&nbsp;</td>
-                                                        	                            	                    	<td class="cell-TB" colspan="2">&nbsp;</td>
-                                                        	                            	                    	<td class="cell-TB" colspan="2">&nbsp;</td>
-                                                        	            		            <td id="dd" class="cell-TB cell-Course" colspan="3">
-		            	KOREAN (203431) sec1		            </td> 
-           		                            	                        <td class="cell-TB">&nbsp;</td>
-                                	                    </tr>
+              วันศุกร์            </td>
+                                                    <td class="cell-TB" colspan="2">&nbsp;</td>
+                                                                                      <td id="dd" class="cell-TB cell-Course" colspan="4">
+                  dsdfsdf               </td> 
+                                                                  <td class="cell-TB" colspan="2">&nbsp;</td>
+                                                                                                              <td class="cell-TB" colspan="2">&nbsp;</td>
+                                                                                                              <td class="cell-TB" colspan="2">&nbsp;</td>
+                                                                                                              <td class="cell-TB" colspan="2">&nbsp;</td>
+                                                                                                              <td class="cell-TB" colspan="2">&nbsp;</td>
+                                                                                                              <td class="cell-TB" colspan="2">&nbsp;</td>
+                                                                                                              <td class="cell-TB" colspan="2">&nbsp;</td>
+                                                                                                              <td class="cell-TB" colspan="2">&nbsp;</td>
+                                                                                                              <td class="cell-TB" colspan="2">&nbsp;</td>
+                                                                                                              <td class="cell-TB" colspan="2">&nbsp;</td>
+                                                                              </tr>
                 <tr style="background-color:#515151;">
-        	<td></td>
-        	            <td style="text-align:center;width:50px;"></td>
+          <td></td>
+                      <td style="text-align:center;width:50px;"></td>
+                        <td style="text-align:center;width:50px;"></td>
+                        <td style="text-align:center;width:50px;"></td>
+                        <td style="text-align:center;width:50px;"></td>
+                        <td style="text-align:center;width:50px;"></td>
+                        <td style="text-align:center;width:50px;"></td>
+                        <td style="text-align:center;width:50px;"></td>
+                        <td style="text-align:center;width:50px;"></td>
+                        <td style="text-align:center;width:50px;"></td>
+                        <td style="text-align:center;width:50px;"></td>
+                        <td style="text-align:center;width:50px;"></td>
+                        <td style="text-align:center;width:50px;"></td>
+                        <td style="text-align:center;width:50px;"></td>
+                        <td style="text-align:center;width:50px;"></td>
+                        <td style="text-align:center;width:50px;"></td>
                         <td style="text-align:center;width:50px;"></td>
                         <td style="text-align:center;width:50px;"></td>
                         <td style="text-align:center;width:50px;"></td>
@@ -107,19 +152,22 @@ exit();
                     </tr>
     </tbody>
 </table>
+<div style="padding-top: 15px; font-size: 16pt;font-weight: bold;">
+  รวม 3 วิชา 8 หน่วย
 </div>
+
 	
+<!-- content  -->
+
+<!-- side bar -->
+  <div >
+    <?php include 'sideBar.php'; ?>
+  </div>
+<!--end side bar -->
+
+
+    <div class="footer">
+        <?php include 'footer.php'; ?>
     </div>
-    </div>
-<!-- start side bar -->
-<div>
-<?php include 'sideBar.php'; ?>
-</div>
-<!-- end side bar -->
-<!-- start footer -->
-<div class="footer">
-<?php include 'footer.php'; ?>
-</div>
-<!-- end footer -->
 </body>
 </html>

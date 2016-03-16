@@ -1,44 +1,62 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-<table>
 <?php
-require_once("connect.php");
+
+$data = "Mo09:00-11:00 B4101#Mo01:00-11:00 B4101";
+$strs = explode("#", $data);
 
 
-$sql="SELECT * FROM test";
-$result=mysqli_query($con,$sql);
-$_result = $con->query($sql);
-echo "<table width='100%'  border='5'>";
-while($row = $_result->fetch_assoc()) 
-{
+$data_db = "Mo09:00-15:00 B4101#Mo02:00-11:00 B4101";
+$_db = explode("#", $data_db);
 
-// Associative array
-$row=mysqli_fetch_array($result,MYSQLI_ASSOC);
-printf ("%s (%s)\n",$row["CourseName"],$row["Time"]);
-echo "<br>";
 
-echo "<tr><td>$row[id]</td>";
-echo "<td>$row[CourseName]</td>";
-echo "<td>$row[Time]</td>";
-echo "<td> <a href= \"delete.php?id=$row[id]\">ลบ </a></td></tr>";
+$count1 = count($data);
+$count2 = count($_db);
+
+
+
+
+
+for($i = 0 ;$i < $count1 ;$i++){
+
+    ///data
+    for($j = 0;$j < $count2;$j++){
+
+        if($strs[$i] == $_db[$j]){
+            echo "ข้อมูลซ้ำ";
+        }
+    }
 
 }
-echo "</table>";
-// Numeric array
+
+echo "<br>";
+$check = "";
+foreach($strs as $str) {
+
+        $day = substr($str, 0, 2);
+
+        $timeStr = substr($str, 2, 12);
+
+        $times = explode("-", $timeStr);
+
+
+        echo $day."<br />";
+        echo print_r($times);
+        echo "<hr>";
+
+
+        if($check == $timeStr){
+            echo "Error";
+        }else {
+            $check = $timeStr;
+        }
+
+
+       
+}
 
 
 
+foreach($strs as $str) {
 
-// Free result set
-mysqli_free_result($result);
+}
 
-mysqli_close($con);
 ?>
-
-</body>
-</html>
-
