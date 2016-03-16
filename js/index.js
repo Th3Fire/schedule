@@ -10,6 +10,7 @@ function courseSave() {
 		var len2 = len.length;
 		var count = (inTxt.match(/#/g) || []).length;
 		var reg ="";
+		var check ="";
 		var estr = inTxt.split("#");
 
 		
@@ -17,6 +18,7 @@ function courseSave() {
 			for(i=0 ;i<estr.length;i++){
 
 			 reg = estr[i].match(/^(Mo|Tu|We|Th|Fr|Sa|Su)[0-9]{2}[:]{1}[0-9]{2}[-]{1}[0-9]{2}[:]{1}[0-9]{2}./);
+
 			}
 		}
 
@@ -141,32 +143,6 @@ function courseSave() {
 		{
 			
 
-
-			for(i = 0 ; i < estr.length ; i++){
-
-			 $.notify({
-
-	icon: "img/checkNotify.png",
-	// options
-	message: "<font size='6'>บันทึกข้อมูลสำเร็จ วิชา : "+str+"  เวลา: "+estr[i] +"</font"},
-
-	{
-	// settings
-	
-	icon_type: 'image',
-	placement: {
-		from: "bottom",	
-	},
-	animate: {
-		enter: 'animated flipInY',
-		exit: 'animated flipOutX'
-	}
-
-});
-
-}
-			
-
 			$.ajax({
 			url : 'checkTime.php',
 			data : {
@@ -175,9 +151,35 @@ function courseSave() {
 				credit : fgt,
 			},
 			success : function(data) {
+
+				for(i = 0 ; i < estr.length ; i++){
+
+		 $.notify({
+
+				icon: "img/checkNotify.png",
+	// options
+				message: "<font size='6'>บันทึกข้อมูลสำเร็จ วิชา : "+str+"  เวลา: "+estr[i] +"</font"},
+
+				{
+	// settings
+	
+				icon_type: 'image',
+				placement: 
+				{
+				from: "bottom",	
+				},
+				animate: 
+				{
+				enter: 'animated flipInY',
+				exit: 'animated flipOutX'
+				}
+
+				}); 
+
+			}
 				
 			}
-		});
+				});
 			}
    
 }
@@ -221,3 +223,31 @@ $(document).on('click', '.alert', function(e) {
 		})
 
         });
+
+
+function saveSuccess(){
+
+	 $.notify({
+
+				icon: "img/checkNotify.png",
+	// options
+				message: "<font size='6'>บันทึกข้อมูลสำเร็จ วิชา : "+str+"  เวลา: "+estr[i] +"</font"},
+
+				{
+	// settings
+	
+				icon_type: 'image',
+				placement: 
+				{
+				from: "bottom",	
+				},
+				animate: 
+				{
+				enter: 'animated flipInY',
+				exit: 'animated flipOutX'
+				}
+
+				});
+
+
+}

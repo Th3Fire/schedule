@@ -75,101 +75,60 @@ exit();
 
 
 	
-	$sql = "SELECT * FROM course WHERE UserID = '".$strUserId."' ";
-
+	$sql = "SELECT * FROM course  WHERE UserID = '".$strUserId."' ORDER BY course";
 	$result=mysqli_query($con,$sql);
-	$_result = $con->query($sql);
+  $cc = "";
 	
-	
+if ($result->num_rows > 0) {
 
-	
-if ($_result->num_rows > 0) {
+	while($row = $result->fetch_assoc()) {
 
-	while($row = $_result->fetch_assoc()) {
-
-		$row=mysqli_fetch_array($result,MYSQLI_ASSOC);
-		
-		echo "<tr><td>";
-
-        echo "<div class='panel panel-warning' style='width: 100%'>";
-        echo "<div class='panel-heading'><font size='4'>วิชา ". $row['CourseName']."</div>";
-    $totalCourse++;
     $rowID = $row['id'];
-		$totalCredit = $row['Credit'] + $totalCredit;
-		$data =  $row['Time'];
-		$strs = explode("#", $data);
-		$_color = '';
-		$_colorTime = 'color=\'white\'>';
-		$_dd = '\"';
-		foreach($strs as $str) {
+		$data =  $row['time_s'];
+    if($row['course'] != $cc){
+      echo "<hr>
+      
+      ";
+     
+      echo "<div ><font size='4'>วิชา".$row['course']."
+      
+      <button class='btDel' id='$rowID' >
+      <span class='glyphicon glyphicon-trash'></span> ลบ
+      </button>
+      </div>
+      ";
+      $totalCredit = $row['credit'] + $totalCredit;
+      $totalCourse++;
 
-        $day = substr($str, 0, 2);
-        if($day == 'Mo'){
-        	$day = 'วันจันทร์';
-        	$_color = 'color=\'yellow\'>';
-        }else if($day == 'Tu'){
-        	$day = 'วันอังคาร';
-        	$_color = 'color=\'pink\'>';
-        }else if($day == 'We'){
-        	$day = 'วันพุธ';
-        	$_color = 'color=\'green\'>';
-        }else if($day == 'Th'){
-        	$day = 'วันพฤหัสบดี';
-        	$_color = 'color=\'orange\'>';
-        }else if($day == 'Fr'){
-        	$day = 'วันศุกร์';
-        	$_color = 'color=\'blue\'>';
-        }else if($day == 'Sa'){
-        	$day = 'วันเสาร์';
-        	$_color = 'color=\'purple\'>';
-        }else if($day == 'Su'){
-        	$day = 'วันอาทิตย์';
-        	$_color = 'color=\'red\'>';
-        }else{
-        	$day = 'รูปแบบวันไม่ถูกต้อง';
-        }
-       
-        $timeStr = substr($str, 2, 12);
+      $cc = $row['course'];
+      echo "<hr>";
 
-        $times = explode("-", $timeStr);
-        echo " <div class='panel-body'>";
-        
-        echo "<font size='4' color='red'>  ".$day."</font>";
-        echo "<br>";
-        echo "<font size='4' color='blue'>         เวลาเรียน </font>";
-        echo "<font size='4' color='blue'> ".$timeStr."</font>";
-       
-        echo "</div>";
-        
-       
-}
-       	
-       	
-		
-       	echo "
-       
-       	
-			<div style='text-align: right'>
-			<button class='btDel' id='$rowID' >
-			<span class='glyphicon glyphicon-trash'></span> ลบ
-			</button>
-       		</div>
+      
 
-       	 
+    }
 
     
-        
-			
-       	";
+     echo $row['day'];
+     echo "<br>";
+     echo $row['time_s'];
+     echo " - ";
+     echo $row['time_e'];
+     echo "<br>";
 
-        
-        echo "</div>";
-        echo "</td><tr>";
-        
+
+     
+
+
+    
+
+   
+     
     }
+
+
+ 
+
 }
-
-
 else
 {
 	echo "
@@ -180,10 +139,9 @@ else
 	";
 }
 
-if($_result->num_rows > 0){
+if($result->num_rows > 0){
   echo "
 <center>
-
 รวม $totalCourse วิชา $totalCredit หน่วยกิต
 </center>";
 }
